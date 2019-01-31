@@ -9,6 +9,11 @@
   </head>
 
   <body>
+    <% if flash.now[:error] %>
+      <% flash.now[:error].each do |err| %>
+        <%= err %>
+      <% end %>
+    <% end %>
     <%= yield %>
   </body>
 </html>
