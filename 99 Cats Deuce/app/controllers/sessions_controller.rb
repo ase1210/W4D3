@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
   end
 
   def create
-    user = User.find_by_credentials(params[:user][:username],params[:user][:password])
+    user = User.find_by_credentials(params[:users][:username],params[:users][:password])
     if user
       user.reset_session_token!
       login!   #To do
